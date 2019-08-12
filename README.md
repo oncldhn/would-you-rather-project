@@ -1,4 +1,10 @@
 # Would You Rather Project
+There is a problem with npm because of the "chokidar"
+
+https://github.com/facebook/create-react-app/issues/6891
+
+Using "yarn install" works
+
 
 This is the starter code for the final assessment project for Udacity's React & Redux course.
 

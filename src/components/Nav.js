@@ -28,7 +28,11 @@ render(){
           <li></li>
           { authedUser != null ?  <div>
                                   <li>Hello {authedUser}</li>
-                                  <li className="logout">{loginOrLogout}</li>
+                                  <li className="logout">
+                                  <button
+                                        types="submit">{loginOrLogout}
+                                      </button>
+                                  </li>
                                   </div>
                                 :null}
        

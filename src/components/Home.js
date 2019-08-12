@@ -19,7 +19,7 @@ class Home extends React.Component {
 
     render (){
         if (this.props.authedUser === null) {
-            return <Redirect to='/Login' />
+            return <Redirect to='/login' />
         }
         const user = this.props.user
         const showUnanswered = this.state.selectedValue === 'unanswered'
@@ -27,9 +27,11 @@ class Home extends React.Component {
             user.answers[question.id] == null : user.answers[question.id] != null)
         return (
             <div>
-                <input type="radio" name="questionType" value="unanswered" checked={this.state.selectedValue==='unanswered'} onChange={this.handleChange}/>
+                <input type="radio" name="questionType" value="unanswered" 
+                    checked={this.state.selectedValue==='unanswered'} onChange={this.handleChange}/>
                     Unanswered Questions
-                <input type="radio" name="questionType" value="answered" checked={this.state.selectedValue==='answered'} onChange={this.handleChange}/>
+                <input type="radio" name="questionType" value="answered" 
+                    checked={this.state.selectedValue==='answered'} onChange={this.handleChange}/>
                     Answered Questions
                 <h3 className='center'>Questions</h3>
                 <ul className='dashboard-list'>

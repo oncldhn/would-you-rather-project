@@ -1,14 +1,23 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom'
 
 class QuestionItem extends React.Component {
 
+    viewPollClicked = (e,id) => {
+        e.preventDefault();
+        this.props.history.push(`/questions/${id}`)
+    }
     render (){
         const question = this.props.question
-        console.log(question)
         return (
-           <div>{this.props.question.optionOne.text}</div> 
+            <div>
+                <div>{question.optionOne.text}</div> 
+                <button
+                        types="submit" onClick={ (e) =>this.viewPollClicked(e,question.id)}>View Poll
+                    </button>
+            </div>
         )
     }
 }
 
-export default QuestionItem
+export default withRouter(QuestionItem)
