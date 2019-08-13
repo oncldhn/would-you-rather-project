@@ -1,11 +1,17 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import { connect } from 'react-redux'
+import { logoutUser } from '../actions/authedUser';
 
 class Nav extends React.Component {
+
+handleLogout = () => {
+  const dispatch = this.props.dispatch;
+  dispatch(logoutUser())
+}
+
 render(){
     const authedUser = this.props.authedUser;
-    const loginOrLogout = authedUser == null ? 'Login' :'Logout'
     return (
       <nav className='nav'>
         <ul>
@@ -26,24 +32,20 @@ render(){
           </li>
           <li></li>
           <li></li>
-          { authedUser != null ?  <div>
-                                  <li>Hello {authedUser}</li>
-                                  <li className="logout">
-                                  <button
-                                        types="submit">{loginOrLogout}
-                                      </button>
-                                  </li>
-                                  </div>
-                                :null}
-       
+          <li></li> 
+          { authedUser != null ? <li className="UserInfo">Hello {authedUser.name}</li>:null}
+          { authedUser != null ? <li><img src={authedUser.avatarURL} className='avatar' alt={`Avatar of ${authedUser.name}`}/></li>:null}
+          { authedUser != null ?  <button className="logout" onClick={this.handleLogout}
+                                          types="submit">Logout
+                                    </button> : null}
         </ul>
       </nav>
     )
   }
 }
-function mapStateToProps ({ authedUser }) {
+function mapStateToProps ({authedUser,users}) {
   return {
-    authedUser: authedUser
+    authedUser: users[authedUser],
   }
 }
 export default connect (mapStateToProps)(Nav)

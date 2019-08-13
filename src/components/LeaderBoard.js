@@ -6,7 +6,7 @@ class LeaderBoard extends React.Component {
 
     render () {
         if (this.props.authedUser === null) {
-            return <Redirect to='/Login' />
+            return <Redirect to='/login' />
         }
         return (
             <div>

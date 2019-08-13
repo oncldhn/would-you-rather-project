@@ -24,7 +24,8 @@ class Home extends React.Component {
         const user = this.props.user
         const showUnanswered = this.state.selectedValue === 'unanswered'
         const filteredQuestions = this.props.questions.filter(question => showUnanswered ? 
-            user.answers[question.id] == null : user.answers[question.id] != null)
+            user.answers[question.id] == null : user.answers[question.id] != null).
+            sort((a,b) => b.timestamp-a.timestamp)
         return (
             <div>
                 <input type="radio" name="questionType" value="unanswered" 

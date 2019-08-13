@@ -58,6 +58,10 @@ a {
   padding-left: 0;
 }
 
+.nav UserInfo {
+  text-align:right
+}
+
 .nav logout {
   text-align:right
 }

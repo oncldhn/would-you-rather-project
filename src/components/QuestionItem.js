@@ -13,8 +13,8 @@ class QuestionItem extends React.Component {
             <div>
                 <div>{question.optionOne.text}</div> 
                 <button
-                        types="submit" onClick={ (e) =>this.viewPollClicked(e,question.id)}>View Poll
-                    </button>
+                    types="submit" onClick={ (e) =>this.viewPollClicked(e,question.id)}>View Poll
+                </button>
             </div>
         )
     }
