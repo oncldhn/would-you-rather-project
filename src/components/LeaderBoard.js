@@ -18,9 +18,9 @@ class LeaderBoard extends React.Component {
                                     <div><img src={user.avatarURL} className='listAvatar' alt={`Avatar of ${user.name}`}/></div>
                                     <div className="userInfo">
                                         <h3>{user.name}</h3>
-                                        <div><b>Answered Questions&nbsp;</b>{user.answeredQuestions}</div>
-                                        <div><b>Created Questions&nbsp;</b>{user.createdQuestions}</div>
-                                        <div><b>Score&nbsp;</b>{user.score}</div> 
+                                        <div><b>Answered Questions </b>{user.answeredQuestions}</div>
+                                        <div><b>Created Questions </b>{user.createdQuestions}</div>
+                                        <div><b>Score </b>{user.score}</div> 
                                     </div>
                                 
                              </li>

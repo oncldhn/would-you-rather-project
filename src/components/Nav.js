@@ -35,9 +35,8 @@ render(){
           <li></li> 
           { authedUser != null ? <li className="UserInfo">Hello, {authedUser.name}</li>:null}
           { authedUser != null ? <img src={authedUser.avatarURL} className='avatar' alt={`Avatar of ${authedUser.name}`}/>:null}
-          { authedUser != null ?  <button className="logout" onClick={this.handleLogout}
-                                          types="submit">Logout
-                                    </button> : null}
+          { authedUser != null ? <li  className="logout" onClick={this.handleLogout}>Logout</li>:null}
+         
         </ul>
       </nav>
     )
