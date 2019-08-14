@@ -21,15 +21,15 @@ class Login extends React.Component {
             return <Redirect to='/' />
         }
         return (
-          <div className="container">
+          <div className="login">
             <div>Sign In</div>
-            <select onChange={this.handleChange} value={this.state.selectedUser}>
-            <option value='ph' disabled>Select User</option>
-                {this.props.userList.map(
-                    (user) => (
-                    <option key={user.id} value={user.id}>{user.name}</option>
-                ))}
-            </select>         
+                <select onChange={this.handleChange} value={this.state.selectedUser}>
+                <option value='ph' disabled>Select User</option>
+                    {this.props.userList.map(
+                        (user) => (
+                        <option key={user.id} value={user.id}>{user.name}</option>
+                    ))}
+                </select>         
          </div>
         )
       }

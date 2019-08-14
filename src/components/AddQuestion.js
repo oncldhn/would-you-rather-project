@@ -56,8 +56,8 @@ class AddQuestion extends React.Component {
         }
         const { firstOptionText, secondOptionText } = this.state
         return(
-            <div className="container">
-                <h3>Create Question</h3>
+            <div className="subContainer">
+                <div className="subHeader">Create Question</div>
                 <div>Would you rather...</div>
                 <form className='new-tweet' onSubmit={this.handleSubmit}>
                     <input  id="firstOption" 

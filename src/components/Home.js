@@ -24,20 +24,19 @@ class Home extends React.Component {
         const user = this.props.user
         const showUnanswered = this.state.selectedValue === 'unanswered'
         const filteredQuestions = this.props.questions.filter(question => showUnanswered ? 
-            user.answers[question.id] == null : user.answers[question.id] != null).
-            sort((a,b) => b.timestamp-a.timestamp)
+            user.answers[question.id] == null : user.answers[question.id] != null)
+            .sort((a,b) => b.timestamp-a.timestamp)
         return (
-            <div>
+            <div className="subContainer">
                 <input type="radio" name="questionType" value="unanswered" 
                     checked={this.state.selectedValue==='unanswered'} onChange={this.handleChange}/>
                     Unanswered Questions
                 <input type="radio" name="questionType" value="answered" 
                     checked={this.state.selectedValue==='answered'} onChange={this.handleChange}/>
                     Answered Questions
-                <h3 className='center'>Questions</h3>
                 <ul className='dashboard-list'>
                     {filteredQuestions.map((question) => (
-                     <li key={question.id}>
+                     <li className="dashboard-item" key={question.id}>
                         <QuestionItem question={question}/>
                       </li>
                      ))}
@@ -51,7 +50,7 @@ function mapStateToProps ({ questions,authedUser,users }) {
     return {
         questions: Object.values(questions),
         authedUser: authedUser,
-        user : users[authedUser]
+        user : users[authedUser],
     }
   }
 

@@ -25,7 +25,7 @@ class App extends React.Component {
           <div className='container'>
           <Nav />
           {this.props.loading === true ? null
-          : <div>
+          : <div className="mainContainer">
               <Route path='/' exact component={Home}/>
               <Route path='/leaderboard'  component={LeaderBoard}/>
               <Route path='/login'  component={Login}/>

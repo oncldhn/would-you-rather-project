@@ -9,17 +9,20 @@ class LeaderBoard extends React.Component {
             return <Redirect to='/login' />
         }
         return (
-            <div>
-                <h3>LeaderBoard</h3>
-                <ul className='dashboard-list'>
+            <div className="subContainer">
+                <div className="subHeader">LeaderBoard</div>
+                <ul>
                         {this.props.users.map((user) => (
-                            <li key={user.id}>
-                                 <div>
-                                    <div>{user.name}</div>
-                                    <div>Answered Questions{user.answeredQuestions}</div>
-                                    <div>Created Questions{user.createdQuestions}</div>
-                                    <div>Score{user.score}</div> 
-                                </div>
+                            <li className="userItem"key={user.id}>
+                                
+                                    <div><img src={user.avatarURL} className='listAvatar' alt={`Avatar of ${user.name}`}/></div>
+                                    <div className="userInfo">
+                                        <h3>{user.name}</h3>
+                                        <div><b>Answered Questions&nbsp;</b>{user.answeredQuestions}</div>
+                                        <div><b>Created Questions&nbsp;</b>{user.createdQuestions}</div>
+                                        <div><b>Score&nbsp;</b>{user.score}</div> 
+                                    </div>
+                                
                              </li>
                         ))}
                 </ul>
