@@ -28,11 +28,14 @@ class QuestionDetail extends React.Component {
     render () {
         const question = this.props.question
         const user = this.props.users[this.props.authedUser]
+        if (user == null) {
+            return <Redirect to={{
+                pathname: '/login',
+                state : {from:this.props.location}
+             }} />
+        }
         if(question == null) {
             return (<div>404: No such question</div>)
-        }
-        if (user == null) {
-            return <Redirect to='/Login' />
         }
         const questionAuthor = this.props.users[question.author];
         if(user.answers[question.id] == null) {

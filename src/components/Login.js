@@ -16,9 +16,10 @@ class Login extends React.Component {
             toHome: true
         }))
     }
-    render () {
+    render () {        
         if (this.state.toHome === true) {
-            return <Redirect to='/' />
+            let redirectUrl = this.props.location.state || { from: { pathname: "/" } }
+            return <Redirect to={{pathname:redirectUrl.from.pathname}}/>
         }
         return (
           <div className="login">

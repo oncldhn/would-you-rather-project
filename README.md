@@ -5,6 +5,9 @@ https://github.com/facebook/create-react-app/issues/6891
 
 Using "yarn install" works
 
+To start the application use "npm start" command.
+
+Applicaton works on localhost:30000
 
 This is the starter code for the final assessment project for Udacity's React & Redux course.
 

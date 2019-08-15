@@ -26,7 +26,7 @@ render(){
             </NavLink>
           </li>
           <li>
-            <NavLink to='/Leaderboard' activeClassName='active'>
+            <NavLink to='/leaderboard' activeClassName='active'>
               Leaderboard
             </NavLink>
           </li>

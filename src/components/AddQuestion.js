@@ -52,7 +52,10 @@ class AddQuestion extends React.Component {
             return <Redirect to='/' />
         }
         if (this.props.authedUser === null) {
-            return <Redirect to='/login' />
+            return <Redirect to={{
+                pathname: '/login',
+                state : {from:this.props.location}
+             }} />
         }
         const { firstOptionText, secondOptionText } = this.state
         return(
